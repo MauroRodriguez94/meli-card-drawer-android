@@ -59,9 +59,9 @@ public class CardDrawerViewMedium extends CardDrawerViewLowres {
     }
 
     @Override
-    public void setCardTextColor(@NonNull @FontType final String fontType, @ColorInt final int fontColor) {
-        super.setCardTextColor(fontType, fontColor);
-        arrow.setColorFilter(getArrowColor(fontType, fontColor));
+    protected void setCardTextColor(@NonNull final CardUI cardUI) {
+        super.setCardTextColor(cardUI);
+        arrow.setColorFilter(getArrowColor(cardUI.getFontType(), cardUI.getCardFontColor()));
     }
 
     private int getArrowColor(@NonNull @FontType final String fontType, @ColorInt final int fontColor) {
